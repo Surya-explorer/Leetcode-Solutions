@@ -14,7 +14,7 @@ public:
                 nn = nn / 2 ;   //   (x)^n  =  x*((x)^2)^(n-1)/2
             }
         }
-        if (n < 0) return 1.0/ans ;
+        if (n < 0) return 1/ans ;
         return (ans) ;
     }
 };
