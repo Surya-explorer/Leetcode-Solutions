@@ -15,6 +15,6 @@ public:
             }
         }
         if (n < 0) return 1/ans ;
-        return (ans) ;
+        return ans ;
     }
 };
