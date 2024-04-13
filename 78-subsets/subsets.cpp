@@ -12,7 +12,7 @@ public:
         int element = nums[index] ;
         part.push_back(element) ;
         solve(nums , ans , part , index + 1) ;
-        // part.pop_back() ;
+        part.pop_back() ;
     }
     vector<vector<int>> subsets(vector<int>& nums) {
         vector <vector <int>> ans ;
