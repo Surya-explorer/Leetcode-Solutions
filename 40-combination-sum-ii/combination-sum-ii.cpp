@@ -4,7 +4,6 @@ public:
         // base case : -
         if (target == 0){
             ans.push_back(temp) ;
-            // return ;
         }
         // while(target-candidates[j] >= 0 ){
         for (int j = i; j < candidates.size(); j++) {
@@ -12,7 +11,7 @@ public:
             if (candidates[j] > target) break;
             temp.push_back(candidates[j]) ;
             solve(ans , target-candidates[j] ,candidates , temp, j+1) ;
-            // j++ ;
+            // Backtracing .
             temp.pop_back() ;
         }
     }
