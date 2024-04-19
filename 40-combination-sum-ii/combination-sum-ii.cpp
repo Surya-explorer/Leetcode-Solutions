@@ -4,7 +4,7 @@ public:
         // base case : -
         if (target == 0){
             ans.push_back(temp) ;
-            return ;
+            // return ;
         }
         // while(target-candidates[j] >= 0 ){
         for (int j = i; j < candidates.size(); j++) {
@@ -21,7 +21,6 @@ public:
         sort(candidates.begin() , candidates.end()) ;
         vector <vector <int>> ans ;
         vector <int> temp ;
-        // candidates.erase(unique(candidates.begin() , candidates.end()) , candidates.end() ) ;
         solve (ans , target , candidates , temp , 0) ;
         return ans ;
     }
