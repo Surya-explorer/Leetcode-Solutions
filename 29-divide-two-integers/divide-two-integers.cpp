@@ -21,7 +21,7 @@ public:
             // n = n - d* (1<< cnt) ;
 
             long long temp = d, cnt = 1;
-            while (n >= (temp << 1) && temp <= (LLONG_MAX >> 1)) {
+            while (n >= (temp << 1)) {
                 temp <<= 1;
                 cnt <<= 1;
             }
