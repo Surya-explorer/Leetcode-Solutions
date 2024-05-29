@@ -14,19 +14,23 @@ public:
         if (dividend <0 && divisor > 0 ) sign = false  ;
 
         while (n >= d) {
-            // long cnt = 0 ;
-            // while (n >= d*(1 << (cnt+1)) && (cnt + 1) < 32) cnt ++ ;
-
-            // ans = ans + (1<<cnt) ; 
-            // n = n - d* (1<< cnt) ;
-
-            long long temp = d, cnt = 1;
-            while (n >= (temp << 1)) {
-                temp <<= 1;
-                cnt <<= 1;
+            long long cnt = 1 ;
+            long long t = d ;
+            while (n >= (t<<1) ){       //  n >= 2t
+                cnt <<= 1;              //  cnt = cnt*2 ;
+                t <<= 1 ;               //  t = 2t   
             }
-            n -= temp;
-            ans += cnt;
+
+            ans = ans + cnt ; 
+            n = n - t ;
+
+            // long long temp = d, cnt = 1;
+            // while (n >= (temp << 1)) {
+            //     temp <<= 1;
+            //     cnt <<= 1;
+            // }
+            // n -= temp;
+            // ans += cnt;
         }
 
         // if ((ans > ( 1 << 31)) && sign ) return INT_MAX ;
