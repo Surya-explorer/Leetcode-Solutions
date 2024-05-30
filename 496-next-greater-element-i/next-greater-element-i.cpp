@@ -5,9 +5,9 @@ public:
         
         for (int i = 0 ; i<nums1.size() ; i++){
             int j1 = 0   ;
-            auto it = std::find(nums2.begin(), nums2.end(), nums1[i]);
+            auto it = find(nums2.begin(), nums2.end(), nums1[i]);
             if (it != nums2.end()) {
-                j1 = std::distance(nums2.begin(), it);
+                j1 = distance(nums2.begin(), it);
             }
             for (int j = j1 ; j < nums2.size() ; j++ ){
                 if (nums1[i] < nums2[j]){
