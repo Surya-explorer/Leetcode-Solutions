@@ -11,14 +11,13 @@ public:
             }
             else  {
                 while(!st.empty() && st.top() > 0 && st.top() < abs(asteroids[i])){
-                    st.pop() ;
-                    // st.push(asteroids[i]) ;
+                    st.pop()  ;
                 }
                 if (!st.empty() && st.top() == abs(asteroids[i])) {
                     st.pop() ;
                 }
                 else {
-                    if (st.empty() || st.top() < 0){
+                    if (st.empty()|| st.top() < 0){
                         st.push(asteroids[i]) ;
                     }
                 }
