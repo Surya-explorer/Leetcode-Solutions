@@ -4,10 +4,10 @@ public:
         long long sum = 0 ;
         
         for (int i = 0 ; i< nums.size() ; i++){
-            // int Max = INT_MIN ;
-            // int Min = INT_MAX ;
-            int Max = nums[i];
-            int Min = nums[i] ;
+            int Max = INT_MIN ;
+            int Min = INT_MAX ;
+            // int Max = nums[i];
+            // int Min = nums[i] ;
             for (int j = i ; j <nums.size() ;j++ ){
                 Max = max(Max , nums[j] ) ;
                 Min = min(Min , nums[j] ) ;
