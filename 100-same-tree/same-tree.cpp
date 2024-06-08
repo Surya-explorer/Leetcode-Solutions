@@ -13,10 +13,6 @@ class Solution {
 public:
 
     bool solve(TreeNode* p, TreeNode* q , bool &ans ) {
-        // if (p == NULL || q == NULL){
-        //     return ;
-        // }
-        // If one node is null and the other isn't, they are not the same
         if (!p && !q) {
             return true;
         }
@@ -33,7 +29,7 @@ public:
 
         bool ans = true  ;
         return solve(p , q , ans) ;
-        // return ans ; 
+        
     }
 
 };
