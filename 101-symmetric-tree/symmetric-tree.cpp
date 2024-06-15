@@ -37,13 +37,13 @@ public:
         if (root == NULL){
             return true ;
         }
+        if (root ->left == NULL && root ->right == NULL) return true ;
         if (root ->left && root->right) {
             TreeNode* node1 = root ->left ;
             TreeNode* node2 = root ->right ;
             solve(node1 , node2 , ans ) ;
         }
         else {
-            if (root ->left == NULL && root ->right == NULL) return true ;
             return false ;
         }
         return ans ;
