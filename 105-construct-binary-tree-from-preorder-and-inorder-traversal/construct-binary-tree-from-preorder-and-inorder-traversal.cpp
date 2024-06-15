@@ -33,6 +33,8 @@ public:
         // Before that element all the elements are for left subtree.
         // After that element all elements are for right subtree .
 
+
+        //////
         int gapleft = inroot - inStart ;
         root -> left = inbuild (preorder , preStart + 1 , preStart + gapleft , inorder , inStart  , inroot- 1 , inMap ) ;
         root -> right = inbuild (preorder ,  preStart + gapleft + 1 , preEnd  ,inorder , inroot + 1 , inEnd , inMap )  ;
