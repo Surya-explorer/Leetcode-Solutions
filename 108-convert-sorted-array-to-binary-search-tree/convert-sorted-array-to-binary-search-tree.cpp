@@ -11,17 +11,6 @@
  */
 class Solution {
 public:
-    // void solve (vector <int> nums , TreeNode * &root , int mid , int i ){
-    //     if ( i == mid || i == nums.size()) return ;
-        
-    //     TreeNode * node = new TreeNode (nums[i]) ;
-    //     root->left = node ;
-    //     solve (nums , root->left , mid , i+ 1) ;
-        
-    //     TreeNode * node1 = new TreeNode (nums[i]) ;
-    //     root->right = node1  ;
-    //     solve (nums , root->left , mid , i+ 1) ;
-    // }
     TreeNode * build_BST (vector<int>& nums , int s , int e){
         
         if (s > e) return NULL ;
@@ -29,7 +18,6 @@ public:
         TreeNode * root = new TreeNode(nums[mid]) ;
         root ->left = build_BST (nums , s , mid- 1) ;
         root ->right = build_BST (nums , mid+ 1 , e) ;
-
         return root ;
     }
     TreeNode* sortedArrayToBST(vector<int>& nums) {
