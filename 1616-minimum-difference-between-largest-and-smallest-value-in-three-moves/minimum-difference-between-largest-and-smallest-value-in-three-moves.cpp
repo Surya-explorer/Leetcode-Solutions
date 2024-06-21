@@ -11,7 +11,7 @@ public:
         // Compare the difference between the maximum and minimum
         // after removing up to 3 smallest or largest elements
         for (int i = 0; i <= 3; i++) {
-            result = std::min(result, nums[n - 4 + i] - nums[i]);
+            result =min(result, nums[n - 4 + i] - nums[i]);
         }
         return result;
     }
