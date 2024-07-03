@@ -5,12 +5,14 @@ public:
         vector <int> vis = {-1} ;
         queue <int> q ;
         // vector<int> colour = {-1 } ;
-        vector<int> colour(n) ;
-        for (int i = 0 ; i < n ; i++) colour[i] = -1 ;
+        // vector<int> colour(n) ;
+        vector<int> colour(n , -1) ;
+        // for (int i = 0 ; i < n ; i++) colour[i] = -1 ;
+        
         colour[0] = 0 ;
         // colour is a Parent colour 
         
-        for (int k = 0 ; k < n ; k++ ){
+        for (int k = 0 ; k < n ; k++ ){ // k represent nodes (from node 0 to node n - 1) .
             q.push(k) ;
             while (!q.empty()){
                 int node = q.front()  ;
