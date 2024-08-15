@@ -11,10 +11,10 @@ public:
                     row[i] = 0 ;
                     col[j] = 0 ;
                     // for (int k = 0 ; k < matrix[0].size() ; k++){
-                    //     matrix[i][k] = -1 ;
+                    //     if (matrix[i][k] != 0 )matrix[i][k] = -1 ;
                     // }
                     // for (int k = 0 ; k < matrix.size() ; k++){
-                    //     matrix[k][j] = -1 ;
+                    //     if (matrix[k][j] != 0 )matrix[k][j] = -1 ;
                     // }
                 }
             }
@@ -22,6 +22,7 @@ public:
         for (int i = 0  ; i < matrix.size() ; i++){
             for (int j = 0 ; j < matrix[0].size() ; j++){
                 if (row[i] == 0 || col[j] == 0 ) matrix[i][j] = 0 ;
+                // if (matrix[i][j] = -1 ) matrix[i][j]  = 0 ;
             }
         }
     }
