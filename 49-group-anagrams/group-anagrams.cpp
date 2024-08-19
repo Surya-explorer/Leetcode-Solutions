@@ -9,6 +9,8 @@ public:
             string s = strs[i] ;
             string st = strs[i] ;
             sort (s.begin() , s.end()) ;
+            
+            // Pushing the unsorted string in vector
             mp[s].push_back(st) ;
         }
 
