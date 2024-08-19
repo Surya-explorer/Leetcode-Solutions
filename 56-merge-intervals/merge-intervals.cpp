@@ -1,32 +1,27 @@
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        vector <vector<int>> ans ;
-        // This thing are used for recursive solutions 
-                            // if (intervals.size() == 0){
-                            //     return {} ;
-                            // }
-                            // else if (intervals.size() == 1){
-                            //     return {intervals[0]} ;
-                            // }
-        sort(intervals.begin() , intervals.end()) ;
-        for (int i = 0 ; i< intervals.size() ; i++){
-            int start = intervals[i][0] ;
-            int end = intervals[i][1] ;
-
-            if (!ans.empty() && end<= ans.back()[1]){
-                continue ;
-            }
-            for (int j = i +1 ; j < intervals.size(); j++  ){
-                if (intervals[j][0] <= end){
-                    end = max(end , intervals[j][1]) ;
+        // if (intervals.size() == 0 || intervals.size() == 1 ){
+            
+        //     return {intervals[0]} ;
+        // }
+        sort (intervals.begin() ,  intervals.end()) ;
+        vector <vector <int>> ans ;
+        ans.push_back(intervals[0]) ;
+        for  (int i = 1 ; i < intervals.size() ; i++){
+            if (ans.back()[1] > intervals[i][0]){
+                if (ans.back()[1] <= intervals[i][1]){
+                    ans.back()[1] = intervals[i][1] ;
                 }
-                else {
-                    break ;
-                }
+                
             }
-            ans.push_back({start , end}) ;
-        }
+            else if (ans.back()[1] == intervals[i][0]){
+                ans.back()[1] = intervals[i][1] ;
+            }
+            else {
+                ans.push_back(intervals[i]) ;
+            }
+        } 
         return ans ;
     }
 };
