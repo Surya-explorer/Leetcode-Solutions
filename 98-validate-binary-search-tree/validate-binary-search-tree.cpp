@@ -11,15 +11,27 @@
  */
 class Solution {
 public:
-    bool solve (TreeNode* &root , long int_min , long int_max){
-        if (root == NULL) return true ;
-        // if (root ->left && root ->right ){
-        // if (root->left->val >=root->val || root->right->val <=root->val) return false ;
-        if (root->val >= int_max || root->val <= int_min) return false ;
-        // }
-        return solve (root ->left , int_min , root->val ) && solve (root ->right , root ->val , int_max ) ;
+
+    // int solve(TreeNode * root  ){
+    //     if (root == NULL || root && !root->left && !root->right) {
+    //         return 1 ;
+    //     }
+    //     if ((root ->left && root->val <= root->left->val) || 
+    //         (root->right && root->val >= root->right->val) ) 
+    //         return 0 ;
+    //     return  solve(root->left ) && solve(root->right ) ;
+    // }
+    // bool isValidBST(TreeNode* root) {
+    //     return solve (root ) ;
+    // }
+bool isValidBST(TreeNode* root, TreeNode* minNode = NULL, TreeNode* maxNode = NULL) {
+    if (root == NULL) return true;
+    if ((minNode != NULL && root->val <= minNode->val) || 
+       (maxNode != NULL && root->val >= maxNode->val)) {
+        return false;
     }
-    bool isValidBST(TreeNode* root) {
-        return solve (root , LONG_MIN , LONG_MAX) ;
-    }
+    return isValidBST(root->left, minNode, root) && 
+            isValidBST(root->right, root, maxNode);
+}
+
 };
