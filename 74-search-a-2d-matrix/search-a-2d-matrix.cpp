@@ -3,8 +3,6 @@ public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         int m = matrix.size();
         int n = matrix[0].size();
-        if (m == 1 && n == 1) if (matrix[0][0] == target) return true ;
-        
         for (int i =  0 ; i <m ; i++ ){
             int s= 0 ;
             int e = n-1 ;
