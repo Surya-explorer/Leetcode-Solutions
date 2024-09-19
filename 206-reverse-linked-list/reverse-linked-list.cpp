@@ -10,19 +10,20 @@
  */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head){
-        // Recursive Method 
-        if (head == NULL) return NULL  ;
-        if (head ->next == NULL ){
-            return head ;
-        }
+    ListNode* reverseList(ListNode* head) {
+        
+        ListNode * curr = head ;
+        ListNode * prev = NULL ;
+        ListNode * nextt = NULL ;
 
-        ListNode * node1 = reverseList (head->next ) ;
-        // node1->next = head ;
-        ListNode* newTail = head->next;
-        newTail->next = head;
-        head->next = NULL ;
-        // return head  ;
-        return node1 ;
+        // prev and curr are the pointers for storing the previous and next pointers .
+
+        while (curr ){
+            nextt = curr->next ;
+            curr->next = prev ;
+            prev = curr ;
+            curr = nextt ;
+        }
+        return prev ;
     }
 };
